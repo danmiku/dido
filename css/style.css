@@ -1,0 +1,381 @@
+/* The Dido Collective — accent is Tyrian purple, after Dido's home city of Tyre. */
+
+:root {
+  --bg: #faf7f2;
+  --surface: #ffffff;
+  --ink: #1f1b24;
+  --muted: #6b6470;
+  --line: #e6dfd6;
+  --accent: #6b1d4a;
+  --accent-ink: #ffffff;
+  --accent-soft: #f3e6ee;
+  --error: #a4262c;
+  --error-soft: #fbeaea;
+  --radius: 10px;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --mono: ui-monospace, "Cascadia Code", Consolas, Menlo, monospace;
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #17141a;
+    --surface: #211c25;
+    --ink: #efe9f1;
+    --muted: #a99fae;
+    --line: #362e3b;
+    --accent: #e09ac2;
+    --accent-ink: #17141a;
+    --accent-soft: #3a2433;
+    --error: #ff8f94;
+    --error-soft: #3d1d20;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--ink);
+  font: 17px/1.6 var(--sans);
+}
+
+h1, h2, h3 {
+  font-family: var(--serif);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.2rem; margin: 0 0 0.5em; }
+
+a { color: var(--accent); text-underline-offset: 0.15em; }
+
+button { font: inherit; cursor: pointer; }
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+code {
+  font: 0.88em var(--mono);
+  background: var(--accent-soft);
+  padding: 0.1em 0.35em;
+  border-radius: 4px;
+}
+
+.muted { color: var(--muted); }
+
+.wrap {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+main.wrap { flex: 1; padding-top: 44px; padding-bottom: 64px; }
+
+/* ---- Header ------------------------------------------------------------ */
+
+.site-header { background: var(--surface); border-bottom: 1px solid var(--line); }
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  min-height: 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-right: auto;
+  color: var(--ink);
+  text-decoration: none;
+  font-family: var(--serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.logo { width: 40px; height: 22.5px; flex: none; }
+.logo-fill { fill: var(--accent-soft); }
+.logo-arc { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; }
+.logo-shore { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; }
+
+.site-nav { display: flex; gap: 4px; }
+
+.site-nav a {
+  padding: 6px 12px;
+  border-radius: 999px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover { color: var(--ink); background: var(--accent-soft); }
+
+.site-nav a[aria-current="page"] {
+  color: var(--accent);
+  background: var(--accent-soft);
+  font-weight: 600;
+}
+
+.logout { margin: 0; }
+
+.logout button {
+  padding: 5px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: none;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.logout button:hover { color: var(--ink); border-color: var(--muted); }
+
+/* ---- Footer ------------------------------------------------------------ */
+
+.site-footer {
+  padding: 18px 0;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* ---- Page headings ----------------------------------------------------- */
+
+.page-head { margin-bottom: 28px; }
+.page-head h1 { margin-bottom: 4px; }
+.page-head p { margin: 0; color: var(--muted); }
+
+/* ---- Welcome ----------------------------------------------------------- */
+
+.prose { max-width: 680px; font-family: var(--serif); font-size: 1.12rem; }
+.prose p { margin: 0 0 1em; }
+.prose h2 { font-size: 1.35rem; margin: 1.6em 0 0.5em; }
+
+.aside {
+  margin-top: 2em;
+  padding: 16px 20px;
+  background: var(--surface);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  font-size: 1rem;
+}
+
+.aside h2 { margin-top: 0; font-size: 1.15rem; }
+.aside p:last-child { margin-bottom: 0; }
+
+.quick-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  max-width: 680px;
+  margin-top: 40px;
+}
+
+.card-link {
+  display: block;
+  padding: 18px 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 0.15s;
+}
+
+.card-link:hover { border-color: var(--accent); }
+.card-link h2 { margin: 0; font-size: 1.2rem; color: var(--accent); }
+.card-link p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+
+/* ---- Members ----------------------------------------------------------- */
+
+.members {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.member {
+  display: flex;
+  gap: 16px;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.member-body { min-width: 0; }
+
+.avatar {
+  flex: none;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.member h2 { margin: 2px 0; font-size: 1.2rem; }
+.member p { margin: 0 0 8px; font-size: 0.95rem; }
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 10px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tags li {
+  padding: 2px 10px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.member-links { font-size: 0.9rem; overflow-wrap: anywhere; }
+
+/* ---- Documents --------------------------------------------------------- */
+
+.table-wrap {
+  overflow-x: auto;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.doc-table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+
+.doc-table th,
+.doc-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+}
+
+.doc-table th {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.doc-table tbody tr:last-child td { border-bottom: 0; }
+.doc-table td:first-child { overflow-wrap: anywhere; }
+.doc-table td:not(:first-child) { white-space: nowrap; color: var(--muted); }
+.doc-table .num { text-align: right; font-variant-numeric: tabular-nums; }
+
+.empty {
+  padding: 32px;
+  background: var(--surface);
+  border: 1px dashed var(--line);
+  border-radius: var(--radius);
+  text-align: center;
+}
+
+.empty p { margin: 0 0 4px; }
+
+/* ---- Login ------------------------------------------------------------- */
+
+.login-page {
+  align-items: center;
+  justify-content: center;
+  padding: 24px 16px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 380px;
+  padding: 36px 32px 32px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  text-align: center;
+}
+
+.login-card .logo { width: 72px; height: 40.5px; }
+.login-card h1 { margin: 14px 0 4px; font-size: 1.6rem; }
+.login-card > p { margin: 0; }
+
+.login-card form {
+  display: grid;
+  gap: 8px;
+  margin-top: 24px;
+  text-align: left;
+}
+
+.login-card label { font-size: 0.9rem; font-weight: 600; }
+
+.login-card input[type="password"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--ink);
+  font: inherit;
+}
+
+.login-card input[type="password"]:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.login-card button {
+  margin-top: 8px;
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 600;
+}
+
+.login-card button:hover { filter: brightness(1.1); }
+.login-card button:disabled { opacity: 0.7; cursor: progress; }
+
+/* While a remembered password is unlocking the page, don't flash the login box. */
+.has-key .login-card { visibility: hidden; }
+
+a[aria-busy="true"] { opacity: 0.6; cursor: progress; }
+
+.error {
+  margin: 16px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: var(--error-soft);
+  color: var(--error);
+  font-size: 0.92rem;
+  text-align: left;
+}
+
+/* ---- Small screens ----------------------------------------------------- */
+
+@media (max-width: 640px) {
+  .wrap { padding: 0 16px; }
+  main.wrap { padding-top: 28px; padding-bottom: 48px; }
+  h1 { font-size: 1.8rem; }
+  .header-inner { padding-top: 10px; padding-bottom: 8px; }
+  .site-nav { order: 3; width: 100%; margin-left: -12px; }
+  .doc-table .col-type { display: none; }
+  .login-card { padding: 28px 20px 24px; }
+}

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>The Dido Collective</title>
+<link rel="icon" href="/dido/images/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/dido/css/style.css">
+<script>try{if(localStorage.getItem('dido-key'))document.documentElement.classList.add('has-key')}catch(e){}</script>
+<script src="/dido/js/unlock.js" defer></script>
+</head>
+<body class="login-page">
+<main class="login-card">
+  <svg class="logo" viewBox="0 0 64 36" aria-hidden="true" focusable="false">
+  <path class="logo-fill" d="M10 32 A22 22 0 0 1 54 32 Z"/>
+  <path class="logo-arc" d="M10 32 A22 22 0 0 1 54 32"/>
+  <path class="logo-shore" d="M3 32 H61"/>
+</svg>
+  <h1>The Dido Collective</h1>
+  <p class="muted">This site is for members only.</p>
+  <p class="error" role="alert" id="dido-error" hidden></p>
+  <form id="dido-form">
+    <label for="password">Password</label>
+    <input id="password" name="password" type="password" autocomplete="current-password" required autofocus>
+    <button type="submit">Enter</button>
+  </form>
+  <noscript><p class="error">Turn on JavaScript to open this site.</p></noscript>
+</main>
+<script type="application/json" id="dido-payload">{"salt":"dGhlLWRpZG8tY29sbGVjdGl2ZS92MQ==","iterations":600000,"iv":"0ZHfsJQubx0pnOzm","data":"BY+vNcGGbhiMacVwRNqsk1TPHZfOcEo+ECcnvCyjeDGiAbuB462Fhig5QghukAbUPW9uNVVjtJDPXeGGKgki8T2jl8YgGqgYfky+OJssut/K+6Km+cvlwDCba1ooLCpj/WPA6bvZm68mr/HrZjzfu1f3hBfCeQ3ehd+vMBDeadQQycOFAfLnNh3byccOra0F0KZ78f2KHapP6EW18r1F3sqi1ejJbzZe4G9VFGxgcWbJx0P2fxGLGtLE75Ms78NQv7LLDMLP6RHmPPjI/6hMjbCM6L/PdGK1PZtoJrhtzwfBIHsDOk1BLZsXNQY5jb2qcyNsDzDJR7fL0S/+NaoTn1A4m0RVi1bNkmVpOclp1NIQLov1uHvkSpRICpZDvgD1Qx6L5oQv9AdcOaX2X24hA2O2AEhzE+48aHbAd9IPj3ieWgc7lntkJ1L2UUnkx+6LUCdpPO6VXBrN3Pv4ky1b6Ff2wR9QLYZaNDggCKGQPsjMzeZeDws7Hw8W38dbxUt4X8CFEUvy1J8/q/yrFOM0Q4VCLea/yqJZbRtofseAlDAwtEK3nbsUMJq8e0n5OxpqLTScF8gkxZZN9BfpaY+dx630aDf/jvHK2vDAtbEmnC8yMYtdPKmzhTpRLNrrLG5AsrkdOYd3dZFUgBj+/eaZfCIyyUle9bXoXmSkuVTHj3ytS+1KDwAiNa7W2iP7fAHMiPGmMIPoLnhxEi6fPG+Ei0Q8ENuvKyH0A0ERS9yN4omM+luiOSvBQLZgnKfeUTmi/ET0q6kHT0oKwx+w+wwZfBwQA/8OjgTGqmrONQRCEqOAYdsVYqZB+XKabIzjULvuVi17Xv8zJuz7pN12lnLBaK4PV2Jz1LkokRnjd8hKzIYM/7bkTK+TJ57TO2Fhrx0J2sWxa/yAnkPIMFz7NT/qMEO94kc587a25nNseYWmyN3hz7lV7WGZ5vX2zCCQ37J7t3+hq/Df+imxdXvq8PRqlI82btgofLft1tyY9Qo7Ps+eXRi1vQ/k6Hhg9yupvIU/SyTIuyCXE1ZCRPWlxnd0hNtaKaEjLyXFu6qPefkDTSQwAyUPt2eY9TFvW7mBKSyXqNlMvQpHnQIGn3KgRk/NK5hF0xqaXryaIutIu1hdBpjMBUN/EV7BSukMye+C9ryyEsvz1U+o4U1Ic8ZlmwGIaxFp0EKtuYaLUU+su47IYDV+qaB1CqpWK8HJmfcEZtQwbyuhtBCPhO9ZH0r+5xtbMsnBFIDmHRPxjKf378g/YAFRH1Bs1wwapOtsqI0OYfjiFcdazatjhw6DhZIyYoxbIyciJhGyT7DGMQ9aiVDDj4rI1FWWkG2vu6A/Z3s/BAyElVKqjAgEiNSwZaMoHI6PHK749CaH2KNjAAonVYPfq99zCj5H/1bhXivsLbVpfzJJdl3XrRE/8d04zpy60Ry/JAVwU2j7LVVYcI3Fhfv2jIuz2Wxi489WI67vpf0yv7sNcK5xgiwiDIhOliE+c5AiPddHtvpkciy1EThpi3qPHs0QdLGSmK+muDK8C/as3xr6ICNvOKEHbZEvlyVYxunW6M9eWkA/ccco6Y2af2PjdibdUP9dsYv24ebg54Il11LQIrHbGvJPyXsX4hOcyYlrB+cpzyHV4pqroBvvHQyu1K+XOpMUjHvl1zuZuxeTrGrdCwRbJCM4s7GqtvJYB463GxBOvx9u2LKO4zIWhOq4kqnHsf4EdkB0WiaRHNlIYzWBRPd9nKLWNIOirz70pobzFuR+TIqgn5EH"}</script>
+</body>
+</html>
